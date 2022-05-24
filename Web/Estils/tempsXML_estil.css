@@ -1,0 +1,252 @@
+
+/*  Estils especialment per pagina de temps */
+
+
+/*  ALL  */
+
+*{
+    padding: 0;
+    margin: 0;
+    
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    width:100%;
+    height:100%;
+}
+
+/*  HEADER  */
+
+header{
+    width:100%;
+    top:0;
+    height: 60px;
+    padding: 0% 12%;
+    background: #557187;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    animation:color 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes color{
+    100%{
+        background: #215e8f;
+        height: 80px;
+    }
+}
+
+.logo{
+    display: flex;
+    width: 20%;
+    min-width: 200px;
+}
+
+.logo a{
+    width:100%;
+}
+
+.logo a img{
+    width:100%;
+}
+
+header h2{
+    text-align: right;
+    width: 80%;
+    font-size: 170%;
+}
+
+/*  MAIN    */
+
+main{
+    width:100%;
+    height: 100%;
+    opacity: 0;
+    animation:main 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes main{
+    100%{
+        opacity: 1;
+    }
+}
+
+#Data_con{
+    text-align: center;
+    margin-top:5%;
+    font-size: 130%;
+}
+
+#Conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weather_cont{
+    margin:2% 1%;
+    width:40%;
+    min-width: 660px;
+    height:350px;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.weather_cont .image{
+    position: relative;
+    border-radius: 15px;
+    color:white;
+    width:40%;
+}
+
+h3{
+    font-size: 140%;
+    text-align: center;
+}
+
+.weather_cont .image::before{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px;
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: url(../Img/temps.jpg) no-repeat;
+    background-size: cover;
+    filter: brightness(50%);
+    
+}
+
+.weather_cont .image .primer, .weather_cont .image .segon{
+    position: relative;
+    margin:6%;
+}
+
+#temp::after{
+    content: 'º';
+}
+
+.weather_cont .imatge img{
+    background: black;
+}
+
+.image table{
+    width:100%;
+}
+
+.image tr{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.image td{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc{
+    width: 60%;
+    background-color: #c6e5fd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius:15px;
+}
+
+.desc .segon, .desc .primer{
+    margin:5%;
+}
+
+.desc .segon{
+    margin-bottom:10%;
+}
+
+.desc table{
+    width:100%;
+}
+
+.desc tr{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.desc th{
+    margin:none;
+}
+
+.titolR{
+    margin-bottom: 4%;
+}
+
+.desc td{
+    margin: 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*  MEDIA QUERIS    */
+
+
+@media only screen and (max-width: 600px) {
+
+    header h2{
+        font-size: 100%;
+    }
+
+    .logo {
+      min-width: 100px;
+      width: 50%;
+    }
+
+    .weather_cont{
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .weather_cont .image{
+        width:100%;
+    }
+
+    .weather_cont .image::before{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius:0;
+        content: "";
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        background: url(../Img/temps.jpg) no-repeat;
+        background-size: cover;
+        filter: brightness(50%);
+        
+    }
+
+    .weather_cont .desc{
+        width:100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius:15px;
+        border-bottom-right-radius:15px;
+    }
+}
